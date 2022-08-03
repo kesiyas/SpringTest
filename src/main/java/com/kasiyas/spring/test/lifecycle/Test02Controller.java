@@ -21,34 +21,34 @@ public class Test02Controller {
 		
 		List<Map<String, Object>> movie = new ArrayList<>();
 		
-		Map<String, Object> info1 = new HashMap<>();
+		Map<String, Object> info = new HashMap<>();
 		
-		info1.put("rate", 15);
-		info1.put("director", "봉준호");
-		info1.put("time", 131);
-		info1.put("title", "기생충");
-		movie.add(info1);
+		info.put("rate", 15);
+		info.put("director", "봉준호");
+		info.put("time", 131);
+		info.put("title", "기생충");
+		movie.add(info);
 		
-		Map<String, Object> info2 = new HashMap<>();
-		info2.put("rate", 0);
-		info2.put("director", "로베르토 베니니");
-		info2.put("time", 116);
-		info2.put("title", "인생은 아름다워");
-		movie.add(info2);
+		info = new HashMap<>();
+		info.put("rate", 0);
+		info.put("director", "로베르토 베니니");
+		info.put("time", 116);
+		info.put("title", "인생은 아름다워");
+		movie.add(info);
 		
-		Map<String, Object> info3 = new HashMap<>();
-		info3.put("rate", 19);
-		info3.put("director", "윤종빈");
-		info3.put("time", 147);
-		info3.put("title", "범죄와의 전쟁 : 나쁜놈들 전성시대");
-		movie.add(info3);
+		info = new HashMap<>();
+		info.put("rate", 19);
+		info.put("director", "윤종빈");
+		info.put("time", 147);
+		info.put("title", "범죄와의 전쟁 : 나쁜놈들 전성시대");
+		movie.add(info);
 		
-		Map<String, Object> info4 = new HashMap<>();
-		info4.put("rate", 15);
-		info4.put("director", "프란시스 로렌스");
-		info4.put("time", 137);
-		info4.put("title", "헝거게임");
-		movie.add(info4);
+		info = new HashMap<>();
+		info.put("rate", 15);
+		info.put("director", "프란시스 로렌스");
+		info.put("time", 137);
+		info.put("title", "헝거게임");
+		movie.add(info);
 		
 		return movie;
 	}
@@ -59,23 +59,23 @@ public class Test02Controller {
 		
 		List<User> list = new ArrayList<>();
 		
-		User user1 = new User();
-		user1.setTitle("안녕하세요 가입인사 드립니다");
-		user1.setUser("hugulu");
-		user1.setContent("안녕하세요. 가입했어요");
-		list.add(user1);
+		User user = new User();
+		user.setTitle("안녕하세요 가입인사 드립니다");
+		user.setUser("hugulu");
+		user.setContent("안녕하세요. 가입했어요");
+		list.add(user);
 		
-		User user2 = new User();
-		user2.setTitle("헐 대박");
-		user2.setUser("bada");
-		user2.setContent("오늘 목요일이었네");
-		list.add(user2);
+		user = new User();
+		user.setTitle("헐 대박");
+		user.setUser("bada");
+		user.setContent("오늘 목요일이었네");
+		list.add(user);
 		
-		User user3 = new User();
-		user3.setTitle("안녕하세요");
-		user3.setUser("dulumary");
-		user3.setContent("....");
-		list.add(user3);
+		user = new User();
+		user.setTitle("안녕하세요");
+		user.setUser("dulumary");
+		user.setContent("....");
+		list.add(user);
 		
 		return list;
 	}
