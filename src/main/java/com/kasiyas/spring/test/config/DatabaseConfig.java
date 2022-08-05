@@ -15,15 +15,14 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 public class DatabaseConfig {
 
 	@Bean
-	public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception {
-		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-		sessionFactory.setDataSource(datasource);
-		
-		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
-		sessionFactory.setMapperLocations(res);
-		
-		return sessionFactory.getObject();
-		
-	}
+    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+        sessionFactory.setDataSource(dataSource);
+
+        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
+        sessionFactory.setMapperLocations(res);
+
+        return sessionFactory.getObject();
+    }
 	
 }
