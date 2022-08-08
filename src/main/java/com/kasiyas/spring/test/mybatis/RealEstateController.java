@@ -51,6 +51,8 @@ public class RealEstateController {
 		return realEstate;
 	}
 	
+	@ResponseBody
+	@RequestMapping("/4")
 	public String addRealEstate() {
 		RealEstate realEstate = new RealEstate();
 		
@@ -60,12 +62,16 @@ public class RealEstateController {
 		realEstate.setType("매매");
 		realEstate.setPrice(100000);
 		
-		
+		int count = realEstateBO.addRealEstate(realEstate);
 		
 		return "삽입 결과 : " + count;
 		
 	}
 	
+	
+	public String addRealEstate2() {
+		
+	}
 	
 	
 }

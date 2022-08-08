@@ -73,8 +73,7 @@
  		INSERT INTO
  			`real_estate`
  		(
- 			`id`
- 			, `realtorId`
+ 			`realtorId`
  			, `address`
  			, `area`
  			, `type`

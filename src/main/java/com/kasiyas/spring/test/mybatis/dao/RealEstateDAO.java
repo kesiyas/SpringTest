@@ -18,4 +18,8 @@ public interface RealEstateDAO {
 	
 	public int insertRealEstate(RealEstate realEstate);
 	
+	public int insertRealEstate2(
+			@Param("realtorId") int realtorId,
+			)
+	
 }
