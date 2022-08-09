@@ -28,5 +28,37 @@
 
 	</insert>
 
+	<select id="selectSellerByObject" resultType="com.kasiyas.spring.test.jsp.model.seller">
+		
+		SELECT
+			`id`
+			, `nickname`
+			, `profileImage`
+			, `temperature`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`seller`
+		ORDER BY `id` DESC
+		LIMIT 1
+		
+	</select>
+	
+	<select id="selectSeller" resultType="com.kasiyas.spring.test.jsp.model.seller"
+	parameterType="int">
+		
+		SELECT
+			`id`
+			, `nickname`
+			, `profileImage`
+			, `temperature`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`seller`
+		WHERE
+			`id` = #{id}
+		
+	</select>
 
 </mapper>
