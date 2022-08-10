@@ -45,14 +45,18 @@ public class sellerController {
 		
 		model.addAttribute("title", "판매자 정보");
 		
+		seller seller = null;
+		
 		if(id == null) {
-			seller seller = sellerBO.lastSeller();
-			model.addAttribute("seller", seller);		
+			seller = sellerBO.lastSeller();
+//			model.addAttribute("seller", seller);		
 		} else {
-			seller seller2 = sellerBO.lastSeller(id);
-			model.addAttribute("seller", seller2);		
+			seller = sellerBO.lastSeller(id);
+//			model.addAttribute("seller", seller);		
 		}
-						
+				
+		model.addAttribute("seller", seller);
+		
 		return "jsp/sellerInfo";
 	}
 	

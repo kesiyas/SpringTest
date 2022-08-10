@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.kasiyas.spring.test.realtor.dao.RealtorDAO">
+	
+	<insert id="insertRealtor" parameterType="com.kasiyas.spring.test.realtor.model.Realtor"
+	useGeneratedKeys="true" keyProperty="id">
+	
+		INSERT INTO `realtor`
+		(
+			`office`
+			, `phoneNumber`
+			, `address`
+			, `grade`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{office}
+			, #{phoneNumber}
+			, #{address}
+			, #{grade}
+			, now()
+			, now()
+		)
+
+	</insert>
+	
+	<delete id="deleteRealtor" parameterType="int">
+		DELETE FROM
+			`realtor`
+		WHERE `id` = #{id}
+	
+	</delete>
+	
+</mapper>
