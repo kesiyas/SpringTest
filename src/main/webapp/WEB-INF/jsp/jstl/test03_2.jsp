@@ -29,7 +29,9 @@
 					<tr>
 						<td>${cardBill.store }</td>
 						<td>${cardBill.pay }</td>
-						<td>${cardBill.date }</td>
+						<fmt:parseDate var="date" value="${cardBill.date }" pattern="yyyy-MM-dd" />
+						<fmt:formatDate var="dateString" value="${date }" pattern="yyyy년 MM월 dd일" />
+						<td>${dateString }</td>
 						<td>${cardBill.installment }</td>
 					</tr>
 				</c:forEach>
