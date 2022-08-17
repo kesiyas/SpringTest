@@ -19,6 +19,34 @@
 		FROM 
 			`weather`
 	</select>
+	
+	<insert id="insertWeather" parameterType="map">
+		INSERT INTO
+			`weather`
+		(
+			`date`
+			, `weather`
+			, `microDust`
+			, `temperatures`
+			, `precipitation`
+			, `windSpeed`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{date }
+			, #{weather }
+			, #{microDust }
+			, #{temperatures }
+			, #{precipitation }
+			, #{windSpeed }
+			, now()
+			, now()
+		)
+		
+	
+	</insert>
 
 
 

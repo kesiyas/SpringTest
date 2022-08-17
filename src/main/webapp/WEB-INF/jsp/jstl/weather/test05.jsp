@@ -13,12 +13,28 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
+<style>
+	
+	.main-menu {
+		background-color:#2377de;
+		width: 200px;
+	}
+	
+	.main-content {
+		width: 900px;
+	}
+	
+	.copyright {
+		width: 1100px;
+		height:300px;
+	}
+</style>
 <body>
 	<div class="container">
 		<div class="d-flex flex-row border-bottom">
 			<jsp:include page="test05_nav.jsp" />
 			
-			<section class="ml-3 col-9">
+			<section class="ml-3 main-content w-100">
 				<h3 class="mt-2">과거 날씨</h3>
 				<table class="table text-center">
 					<thead>
@@ -34,8 +50,9 @@
 					
 					<tbody>
 						<c:forEach var="weatherList" items="${weatherList }">
+							<fmt:parseDate var="date" value="${weatherList.date }" pattern="yyyy-MM-dd"/>
 							<tr>
-								<td><fmt:formatDate value="${weatherList.date }" pattern="yyyy년 M월 d일" /></td>
+								<td><fmt:formatDate value="${date }" pattern="yyyy년 M월 d일" /></td>
 								<c:choose>
 									<c:when test="${weatherList.weather eq '맑음' }">
 										<td><img src="http://marondal.com/material/images/dulumary/web/jstl/sunny.jpg" alt="맑음"></td>

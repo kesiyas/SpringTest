@@ -5,7 +5,7 @@ import java.util.Date;
 public class Weatherhistory {
 
 	private int id;
-	private Date date;
+	private String date;
 	private String weather;
 	private double temperatures;
 	private double precipitation;
@@ -20,10 +20,10 @@ public class Weatherhistory {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getWeather() {

@@ -1,5 +1,6 @@
 package com.kasiyas.spring.test.jstl.bo;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class WeatherhistoryBO {
 		List<Weatherhistory> weatherList = weatherdao.selectWeather();
 		
 		return weatherList;
+	}
+	
+	public int addWeather(Weatherhistory weather) {
+		
+		return weatherdao.insertWeather(weather);
 	}
 	
 }
