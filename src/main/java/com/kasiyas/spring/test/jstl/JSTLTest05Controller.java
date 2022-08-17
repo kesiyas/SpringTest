@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kasiyas.spring.test.jstl.bo.WeatherhistoryBO;
 import com.kasiyas.spring.test.jstl.model.Weatherhistory;
@@ -28,6 +26,12 @@ public class JSTLTest05Controller {
 		
 		return "jstl/test05";
 
+	}
+	
+	@GetMapping("/2")
+	public String weatherInput() {
+		
+		return "jstl/test05_Input";
 	}
 	
 }

@@ -13,10 +13,70 @@
 <body>
 
 	<div class="container">
+		<div class="d-flex flex-row border-bottom">
+			<jsp:include page="test05_nav.jsp" />
+			
+			<section class="ml-3 col-9">
+				<h3 class="mt-2">날씨 입력</h3>
+				
+				<form method="post" action>
+					
+					<div class="border d-flex mt-5 ml-5 align-content-between flex-wrap">
+						<div class="input-group form-inline">
+							<label class="input-label mr-2">날짜</label>
+							<input type="text" name="date" class="form-control col-4">
+						</div>	 
+						<div class="input-group form-inline">
+							<label class="input-label mr-2">날씨</label>
+							<select name="weather" class="form-control col-2">
+								<option value="sunny">맑음</option>
+								<option value="cloud">구름조금</option>
+								<option value="gray">흐림</option>
+								<option value="rain">비</option>
+							</select>
+						</div>
+						<div class="input-group form-inline">
+							<label class="input-label mr-2">미세먼지</label>
+							<select name="microDust" class="form-control col-2">
+								<option value="good">좋음</option>
+								<option value="nomal">보통</option>
+								<option value="bad">나쁨</option>
+							</select>
+						</div>
+					
+						<div class="d-flex">
+							<label class="input-label mr-2">기온</label> 
+							<div class="input-group form-inline">
+								<input type="text" name="temperatures" class="form-control col-5">
+								<div class="input-group-append">
+									<span class="input-group-text">℃</span>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex">
+							<label class="input-label mr-2">강수량</label> 
+							<div class="input-group form-inline">
+								<input type="text" name="precipitation" class="form-control col-5">
+								<div class="input-group-append">
+									<span class="input-group-text">mm</span>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex">
+							<label class="input-label mr-2">풍속</label> 
+							<div class="input-group form-inline">
+								<input type="text" name="windSpeed" class="form-control col-3">
+								<div class="input-group-append">
+									<span class="input-group-text">km/h</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+		</div>
 		
-		
-		<h2>날씨 입력</h2>
-	
+		<jsp:include page="test05_footer.jsp" />
 	</div>
 
 </body>

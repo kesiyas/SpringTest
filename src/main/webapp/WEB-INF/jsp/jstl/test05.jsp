@@ -14,71 +14,53 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-
-	<div class="container d-flex flex-row">
-		<nav class="col-3 bg-primary">
-			<h3 class="text-center text-white">기상청</h3>
-			<ul class="nav d-flex flex-column">
-				<li class="nav-item"><a class="nav-link text-white" href="#">날씨</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">날씨입력</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">테마날씨</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">관측기후</a></li>		
-			</ul>
-		</nav>
-		
-		<div class="ml-3 col-9">
-			<h2>과거 날씨</h2>
-			<table class="table text-center">
-				<thead>
-					<tr>
-						<th>날짜</th>
-						<th>날씨</th>
-						<th>기온</th>
-						<th>강수량</th>
-						<th>미세먼지</th>
-						<th>풍속</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<c:forEach var="weatherList" items="${weatherList }">
+	<div class="container">
+		<div class="d-flex flex-row border-bottom">
+			<jsp:include page="test05_nav.jsp" />
+			
+			<section class="ml-3 col-9">
+				<h3 class="mt-2">과거 날씨</h3>
+				<table class="table text-center">
+					<thead>
 						<tr>
-							<td><fmt:formatDate value="${weatherList.date }" pattern="yyyy년 M월 d일" /></td>
-							<c:choose>
-								<c:when test="${weatherList.weather eq '맑음' }">
-									<td><img src="http://marondal.com/material/images/dulumary/web/jstl/sunny.jpg" alt="맑음"></td>
-								</c:when>
-								<c:when test="${weatherList.weather eq '구름조금' }">
-									<td><img src="http://marondal.com/material/images/dulumary/web/jstl/partlyCloudy.jpg" alt="구름"></td>
-								</c:when>
-								<c:when test="${weatherList.weather eq '흐림' }">
-									<td><img src="http://marondal.com/material/images/dulumary/web/jstl/cloudy.jpg" alt="흐림"></td>
-								</c:when>
-								<c:otherwise>
-									<td><img src="http://marondal.com/material/images/dulumary/web/jstl/rainy.jpg" alt="비"></td>
-								</c:otherwise>
-							</c:choose>
-							<td>${weatherList.temperatures }</td>
-							<td>${weatherList.precipitation }mm</td>
-							<td>${weatherList.microDust }</td>
-							<td>${weatherList.windSpeed }km/h</td>
+							<th>날짜</th>
+							<th>날씨</th>
+							<th>기온</th>
+							<th>강수량</th>
+							<th>미세먼지</th>
+							<th>풍속</th>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+					</thead>
+					
+					<tbody>
+						<c:forEach var="weatherList" items="${weatherList }">
+							<tr>
+								<td><fmt:formatDate value="${weatherList.date }" pattern="yyyy년 M월 d일" /></td>
+								<c:choose>
+									<c:when test="${weatherList.weather eq '맑음' }">
+										<td><img src="http://marondal.com/material/images/dulumary/web/jstl/sunny.jpg" alt="맑음"></td>
+									</c:when>
+									<c:when test="${weatherList.weather eq '구름조금' }">
+										<td><img src="http://marondal.com/material/images/dulumary/web/jstl/partlyCloudy.jpg" alt="구름"></td>
+									</c:when>
+									<c:when test="${weatherList.weather eq '흐림' }">
+										<td><img src="http://marondal.com/material/images/dulumary/web/jstl/cloudy.jpg" alt="흐림"></td>
+									</c:when>
+									<c:otherwise>
+										<td><img src="http://marondal.com/material/images/dulumary/web/jstl/rainy.jpg" alt="비"></td>
+									</c:otherwise>
+								</c:choose>
+								<td>${weatherList.temperatures }</td>
+								<td>${weatherList.precipitation }mm</td>
+								<td>${weatherList.microDust }</td>
+								<td>${weatherList.windSpeed }km/h</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</section>
 		</div>
-		
-		<footer>
-			<div class="d-flex text-secondary">
-				<div>
-					<h3>기상청</h3>
-				</div>
-				<div>
-				
-				</div>
-			</div>
-		</footer>
+		<jsp:include page="test05_footer.jsp" />
 	</div>
-
 </body>
 </html>
