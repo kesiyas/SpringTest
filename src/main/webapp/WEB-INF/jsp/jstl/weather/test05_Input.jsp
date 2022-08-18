@@ -34,6 +34,10 @@
 	.input-Label {
 		width: 70px;
 	}
+	
+	.input-size { 
+		width: 250px;
+	}
 </style>
 </head>
 <body>
@@ -71,7 +75,7 @@
 							</select>
 						</div>
 					
-						<div class="d-flex align-items-center">
+						<div class="d-flex align-items-center input-size bg-info">
 							<label class="input-Label">기온</label> 
 							<div class="input-group form-inline">
 								<input type="text" name="temperatures" class="form-control">

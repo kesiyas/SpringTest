@@ -53,7 +53,7 @@ public class JSTLTest05Controller {
 		
 		model.addAttribute("weatherList", weather);
 		
-		return weatherhistory(model);		
+		return "redirect:/jstl/test05/select";		
 				
 	}
 	
