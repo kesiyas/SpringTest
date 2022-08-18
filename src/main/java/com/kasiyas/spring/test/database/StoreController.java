@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kasiyas.spring.test.database.bo.StoreBO;
 import com.kasiyas.spring.test.database.model.Store;
@@ -19,11 +19,13 @@ public class StoreController {
 	private StoreBO storeBO;
 	
 	@GetMapping("/select")
-	public String test01() {
+	public String test06(Model model) {
 		
 		List<Store> storeList = storeBO.getStoreList();
 		
-		return "jstl/test06";
+		model.addAttribute("storeList", storeList);
+		
+		return "jstl/store/test06";
 		
 		
 	}

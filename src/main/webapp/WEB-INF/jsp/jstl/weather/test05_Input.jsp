@@ -32,7 +32,7 @@
 	}
 	
 	.input-Label {
-		width: 120px;
+		width: 70px;
 	}
 </style>
 </head>
@@ -46,7 +46,7 @@
 				<h3>날씨 입력</h3>
 				
 				<form method="post" action="/jstl/test05/add/view">					
-					<div class="border d-flex justify-content-between mt-5">
+					<div class="border d-flex justify-content-between mt-5 flex-wrap">
 						<div class="d-flex align-items-center">
 							<label class="input-Label" >날짜</label>
 							<input type="text" name="date" class="form-control" id="datepicker">
@@ -118,6 +118,7 @@
 			$("#datepicker").datepicker( {
 		
 				dateFormat : "yy년 mm월 dd일"
+				
 			
 			})
 		});
