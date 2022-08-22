@@ -30,7 +30,7 @@
 						<td>${bookmark.name }</td>					
 						<td>${bookmark.url }</td>
 						<td><button class="deleteBtn btn btn-danger" 
-						value="${bookmark.id }">삭제</button></td>				
+						data-bookmark-id="${bookmark.id }">삭제</button></td>				
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -42,18 +42,17 @@
 			
 			$(".deleteBtn").on("click", function(){
 				
-				var del = $(this).val();
+				let bookmarkId = $(this).data("bookmark-id");
 				
 				$.ajax({
-					type:"post"
+					type:"get"
 					, url:"/ajax/test01/deleteData"
-					, data:{"id":del}
+					, data:{"id":bookmarkId}
 					, success:function(data){
 						if(data.result == "success") {
 							alert("삭제 성공");
-							location.href="/ajax/test01/list";						
+							location.reload();						
 						} else{
-							
 							alert("삭제 실패");
 						}
 						

@@ -17,7 +17,7 @@ import com.kasiyas.spring.test.ajax.bo.BookmarkBO;
 import com.kasiyas.spring.test.ajax.model.Bookmark;
 
 @Controller
-@RequestMapping("/ajax/test01")
+@RequestMapping("/ajax/bookmark")
 public class BookmarkController {
 	@Autowired
 	BookmarkBO bookmarkBO;
@@ -61,19 +61,15 @@ public class BookmarkController {
 	@PostMapping("/isduplicate")
 	@ResponseBody
 	public Map<String, Boolean> isDuplicate(@RequestParam("url") String url){
-		
+				
 		Map<String, Boolean> map = new HashMap<>();
 		
-		if(bookmarkBO.isDuplicate(url)) {
-			map.put("result", true);
-		} else {
-			map.put("result", false);
-		}
-				
+		map.put("is_duplicate", bookmarkBO.isDuplicate(url));
+			
 		return map;			
 	}
 	
-	@PostMapping("/deleteData")
+	@GetMapping("/deleteData")
 	@ResponseBody
 	public Map<String, String> deleteBookmark(@RequestParam("id") int id) {
 		
