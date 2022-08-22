@@ -16,7 +16,11 @@
 		<h1>즐겨찾기 추가하기</h1>
 		
 		<label>제목</label><input class="form-control" type="text" name="name" id="nameInput">
-		<label>주소</label><input class="form-control" type="text" name="url" id="urlInput">
+		<label>주소</label>
+		<div class="d-flex w-100">
+			<input class="form-control mr-2" type="text" name="url" id="urlInput"> 
+			<button id="checkBtn" class="btn btn-primary">중복체크</button>
+		</div>
 		<button type="button" class="btn btn-success form-control mt-3" id="addBtn">추가</button>
 	
 	</div>
@@ -24,6 +28,41 @@
 	<script>
 		$(document).ready(function(){
 											
+			$("#checkBtn").on("click", function(){
+				
+				let url = $("#urlInput").val();
+				
+				let regex = /^(http(s)?:VV)/gi
+				
+				if(url == "") {
+					alert("주소를 입력하세요!");
+					return ;
+				} 
+				
+				if(regex.test(url)) {
+					alert("주소를 제대로 입력하세요!");
+					return ;
+				}		
+				
+				$.ajax({
+					type:"post"
+					, url:"/ajax/test01/isduplicate"
+					, data:{"url":url}
+					, success:function(data){
+						if(data.result) {
+							alert("중복된 url 있음");
+						} else {
+							alert("사용가능한 url");
+						}
+					}
+					, error:function(){
+						alert("중복체크 에러");
+					}
+					
+				});
+				
+			});
+							
 			$("#addBtn").on("click", function(){
 				
 				let name = $("#nameInput").val();

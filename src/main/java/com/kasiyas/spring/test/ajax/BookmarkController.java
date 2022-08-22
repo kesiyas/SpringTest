@@ -58,7 +58,35 @@ public class BookmarkController {
 		
 	}
 	
+	@PostMapping("/isduplicate")
+	@ResponseBody
+	public Map<String, Boolean> isDuplicate(@RequestParam("url") String url){
+		
+		Map<String, Boolean> map = new HashMap<>();
+		
+		if(bookmarkBO.isDuplicate(url)) {
+			map.put("result", true);
+		} else {
+			map.put("result", false);
+		}
+				
+		return map;			
+	}
 	
+	@PostMapping("/deleteData")
+	@ResponseBody
+	public Map<String, String> deleteBookmark(@RequestParam("id") int id) {
+		
+		Map<String, String> map = new HashMap<>();
+
+		if(bookmarkBO.deleteBookmark(id) == 1) {
+			map.put("result", "success");
+		} else	{
+			map.put("result", "fail");		
+		}
+		
+		return map;
+	}
 	
 	
 }

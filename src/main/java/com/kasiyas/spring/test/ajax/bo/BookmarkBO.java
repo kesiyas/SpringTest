@@ -22,4 +22,17 @@ public class BookmarkBO {
 		
 		return bookmarkDAO.insertBookmark(name, url);
 	}
+	
+	public boolean isDuplicate(String url) {
+		
+		return (bookmarkDAO.selectUrlCount(url) == 0) ? false : true ;
+		
+	}
+	
+	public int deleteBookmark(int id) {
+		
+		int count = bookmarkDAO.deleteBookmark(id);
+		
+		return count;
+	}
 }
