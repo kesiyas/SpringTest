@@ -1,16 +1,13 @@
 @charset "UTF-8";
 
-#wrap {
-    width: 1100px;
-    margin: auto;
-}
-
 header {
+	width:1100px;
     height: 100px;
 }
 
 .main-menu {
     height:40px;
+    width:1100px;
     background-color: rgb(238, 119, 40);
 }
 
@@ -23,7 +20,11 @@ header {
 }
 
 .contents {
-    height: 700px;
+    width:1100px;
+}
+
+.contents > .join-box{
+	width:700px;	
 }
 
 .contents > .main-banner {
@@ -54,16 +55,12 @@ header {
     width: 420px;
 }
 
-label {
-    color:azure
-}
-
 .main-info > .contact {
     height:270px;
     width:300px;
     background-color: brown;
 }
 
-.footer-class {
-    height: 100px;
+footer {
+    width:1100px;
 }

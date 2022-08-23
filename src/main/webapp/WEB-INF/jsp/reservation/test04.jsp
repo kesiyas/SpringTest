@@ -14,7 +14,7 @@
 
     <body>
 
-        <div id="wrap">
+        <div class="container">
             <jsp:include page="test04_header.jsp" />
 
             <jsp:include page="test04_nav.jsp" />

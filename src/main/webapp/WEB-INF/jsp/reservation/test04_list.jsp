@@ -50,7 +50,7 @@
 									<td class="text-success">${booking.state }</td>
 								</c:otherwise>
 							</c:choose>
-							<td><button class="btn btn-danger">삭제</button></td>
+							<td><button class="btn btn-danger deleteBtn" data-booking-id="${booking.id }">삭제</button></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -61,7 +61,40 @@
 		<jsp:include page="test04_footer.jsp" />
 	</div>
 
-
+	<script>
+		$(document).ready(function(){
+			
+			$(".deleteBtn").on("click", function(){
+				
+				let bookingId = $(this).data("booking-id");
+				
+				$.ajax({
+					type:"get"
+					, url:"/booking/delete"
+					, data:{"id":bookingId}
+					, success:function(data){
+						if(data.result == "success") {
+							location.reload();
+							alert("삭제 성공");
+						}else{
+							alert("삭제 실패");
+						}
+					}
+					, error:function(){
+						alert("삭제 시도 중 에러발생");
+					}
+						
+				});
+				
+			});
+			
+			
+			
+			
+			
+		});
+	
+	</script>
 
 
 </body>

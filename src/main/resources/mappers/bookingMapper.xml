@@ -19,4 +19,36 @@
 		FROM
 			`booking`
 	</select>
+	
+	<delete id="deleteBooking" parameterType="int">
+		DELETE
+		FROM
+			`booking`
+		WHERE
+			`id` = #{id}
+	</delete>
+	
+	<insert id="insertBooking" parameterType="map">
+		INSERT INTO
+			`booking`
+		(
+			`name`
+			, `date`
+			, `day`
+			, `headcount`
+			, `phoneNumber`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{name}
+			, #{date}
+			, #{day}
+			, #{headcount}
+			, #{phoneNumber}
+			, now()
+			, now()
+		)
+	</insert>
 </mapper>

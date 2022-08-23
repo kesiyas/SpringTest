@@ -2,12 +2,14 @@ package com.kasiyas.spring.test.booking.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Booking {
 	private int id;
 	private String name;
 	private int headcount;
-	private int day;
-	private Date date;
+	private int day;	
+	private Date date;	
 	private String phoneNumber;
 	private String state;
 	public String getState() {

@@ -1,9 +1,11 @@
 package com.kasiyas.spring.test.booking.bo;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kasiyas.spring.test.booking.dao.BookingDAO;
 import com.kasiyas.spring.test.booking.model.Booking;
@@ -16,6 +18,20 @@ public class BookingBO {
 	public List<Booking> bookingList(){
 		
 		return bookingDAO.selectBooking();
+	}
+	
+	public int deleteBooking(int id) {
+		
+		return bookingDAO.deleteBooking(id);
+	}
+	
+	public int addBooking(String name
+			, Date date
+			, int day
+			, int headcount
+			, String phoneNumber) {
+		
+		return bookingDAO.insertBooking(name, date, day, headcount, phoneNumber);
 	}
 	
 }
