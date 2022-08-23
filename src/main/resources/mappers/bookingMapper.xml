@@ -37,6 +37,7 @@
 			, `day`
 			, `headcount`
 			, `phoneNumber`
+			, `state`
 			, `createdAt`
 			, `updatedAt`
 		)
@@ -47,8 +48,24 @@
 			, #{day}
 			, #{headcount}
 			, #{phoneNumber}
+			, '대기중'
 			, now()
 			, now()
 		)
 	</insert>
+	
+	<select id="selectBookingByObject" parameterType="map" resultType="com.kasiyas.spring.test.booking.model.Booking">
+		SELECT
+			`name`
+			, `date`
+			, `day`
+			, `headcount`
+			, `state`
+		FROM 
+			`booking`
+		WHERE
+			`name` = #{name}
+			AND `phoneNumber` = #{phoneNumber}
+	
+	</select>
 </mapper>

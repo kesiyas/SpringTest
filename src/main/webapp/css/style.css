@@ -28,21 +28,19 @@ header {
 }
 
 .contents > .main-banner {
-    height:430px;
+    height:490px;
 }
 
 .contents > .main-info {
-    height:310px;
+	height:250px;
 }
 
 .main-info > .reserveation {
-    height: 270px;
     width:350px;
     background-color: brown;
 }
 
 .main-info > .reservationCheck {
-    height: 270px;
     width: 450px;
     background-color: rgb(255, 136, 0);
 }
@@ -56,7 +54,6 @@ header {
 }
 
 .main-info > .contact {
-    height:270px;
     width:300px;
     background-color: brown;
 }

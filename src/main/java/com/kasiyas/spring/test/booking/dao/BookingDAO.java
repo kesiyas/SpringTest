@@ -20,5 +20,10 @@ public interface BookingDAO {
 			, @Param("date") Date date
 			, @Param("day") int day
 			, @Param("headcount") int headcount
+			, @Param("phoneNumber") String phoneNumber
+			, @Param("state") String state);
+	
+	public Booking selectBookingByObject(
+			@Param("name") String name
 			, @Param("phoneNumber") String phoneNumber);
 }

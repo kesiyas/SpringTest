@@ -46,8 +46,11 @@
 								<c:when test="${booking.state eq '대기중' }">
 									<td class="text-info">${booking.state }</td>
 								</c:when>
-								<c:otherwise>
+								<c:when test="${booking.state eq '확정' }">
 									<td class="text-success">${booking.state }</td>
+								</c:when>
+								<c:otherwise>
+									<td>${booking.state }</td>
 								</c:otherwise>
 							</c:choose>
 							<td><button class="btn btn-danger deleteBtn" data-booking-id="${booking.id }">삭제</button></td>

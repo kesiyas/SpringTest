@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.kasiyas.spring.test.booking.bo.BookingBO;
 import com.kasiyas.spring.test.booking.model.Booking;
 
@@ -80,4 +82,25 @@ public class BookingController {
 		
 		return map;
 	}
+	
+	@GetMapping("/inqury")
+	@ResponseBody
+	public Map<String, Object> reservationInqury(
+			@RequestParam("name") String name
+			, @RequestParam("phoneNumber") String phoneNumber) {
+			
+			Booking booking = bookingBO.reservationInqury(name, phoneNumber);
+		
+			Map<String, Object> map = new HashMap<>();
+
+			map.put("name", booking.getName());	
+			map.put("date", booking.getDate());
+			map.put("day", booking.getDay());
+			map.put("headcount", booking.getHeadcount());
+			map.put("state", booking.getState());
+			
+			return map;
+	}
+	
+	
 }
