@@ -1,5 +1,6 @@
 package com.kasiyas.spring.test.booking;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -91,15 +92,16 @@ public class BookingController {
 			
 			Booking booking = bookingBO.reservationInqury(name, phoneNumber);
 		
-			Map<String, Object> map = new HashMap<>();
-
-			map.put("name", booking.getName());	
-			map.put("date", booking.getDate());
-			map.put("day", booking.getDay());
-			map.put("headcount", booking.getHeadcount());
-			map.put("state", booking.getState());
+			Map<String, Object> result = new HashMap<>();
 			
-			return map;
+			if(booking != null) {
+				result.put("result", "success");
+				result.put("data", booking);
+			} else {
+				result.put("result", "fail");
+			}
+			
+			return result;
 	}
 	
 	

@@ -159,14 +159,14 @@
               	, url:"/booking/inqury"
               	, data:{"name":name, "phoneNumber":phoneNumber}
               	, success:function(data){                		
-              		if(data != null) {
-              			alert("이름 : " + data.name + "\n" +
-              					"날짜 : " + data.date + "\n" +
-              					"일수 : " + data.day + "\n" +
-              					"인원 : " + data.headcount + "\n" +
-              					"상태 : " + data.state);    
-              		} else {
+              		if(data.result == fail) {
               			alert("조회 결과가 없습니다.");
+              		} else {
+              			alert("이름 : " + data.data.name + 
+              					"\n날짜 : " + data.data.date.slice(0, 10) +
+              					"\n일수 : " + data.data.day + 
+              					"\n인원 : " + data.data.headcount +
+              					"\n상태 : " + data.data.state);  
               		}
               	}
               	, error:function(){
